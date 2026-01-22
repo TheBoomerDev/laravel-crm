@@ -338,12 +338,12 @@ return [
             'header' => [
                 'mega-search' => [
                     'title' => 'البحث الشامل',
-                    'tabs' => [
-                        'leads' => 'العملاء المحتملين',
-                        'quotes' => 'عروض الأسعار',
-                        'persons' => 'الأشخاص',
-                        'products' => 'المنتجات',
-                        'settings'       => 'الإعدادات',
+                    'tabs'  => [
+                        'leads'           => 'العملاء المحتملين',
+                        'quotes'          => 'عروض الأسعار',
+                        'persons'         => 'الأشخاص',
+                        'products'        => 'المنتجات',
+                        'settings'        => 'الإعدادات',
                         'configurations'  => 'التهيئة',
                     ],
                     'explore-all-products'          => 'استكشاف جميع المنتجات',

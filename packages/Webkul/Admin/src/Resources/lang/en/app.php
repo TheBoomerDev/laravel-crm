@@ -339,11 +339,11 @@ return [
                 'mega-search' => [
                     'title' => 'Mega Search',
                     'tabs' => [
-                        'leads' => 'Leads',
-                        'quotes' => 'Quotes',
-                        'persons' => 'Persons',
-                        'products' => 'Products',
-                        'settings' => 'Settings',
+                        'leads'          => 'Leads',
+                        'quotes'         => 'Quotes',
+                        'persons'        => 'Persons',
+                        'products'       => 'Products',
+                        'settings'       => 'Settings',
                         'configurations' => 'Configurations',
                     ],
 

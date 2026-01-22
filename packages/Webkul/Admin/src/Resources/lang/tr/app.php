@@ -338,12 +338,12 @@ return [
             'header' => [
                 'mega-search' => [
                     'title' => 'Mega Arama',
-                    'tabs' => [
-                        'leads' => 'Müşteriler',
-                        'quotes' => 'Teklifler',
-                        'persons' => 'Kişiler',
-                        'products' => 'Ürünler',
-                        'settings' => 'Ayarlar',
+                    'tabs'  => [
+                        'leads'          => 'Müşteriler',
+                        'quotes'         => 'Teklifler',
+                        'persons'        => 'Kişiler',
+                        'products'       => 'Ürünler',
+                        'settings'       => 'Ayarlar',
                         'configurations' => 'Yaplandırmalar',
                     ],
                     'explore-all-products'          => 'Tüm Ürünleri Keşfet',

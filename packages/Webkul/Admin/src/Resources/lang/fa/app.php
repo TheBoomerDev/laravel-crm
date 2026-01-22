@@ -338,12 +338,12 @@ return [
             'header' => [
                 'mega-search' => [
                     'title' => 'جستجوی بزرگ',
-                    'tabs' => [
-                        'leads' => 'سرنخ‌ها',
-                        'quotes' => 'پیشنهادات',
-                        'persons' => 'افراد',
-                        'products' => 'محصولات',
-                        'settings' => 'تنظیمات',
+                    'tabs'  => [
+                        'leads'          => 'سرنخ‌ها',
+                        'quotes'         => 'پیشنهادات',
+                        'persons'        => 'افراد',
+                        'products'       => 'محصولات',
+                        'settings'       => 'تنظیمات',
                         'configurations' => 'پیکربندی‌ها',
                     ],
                     'explore-all-products'          => 'کاوش در تمامی محصولات',

@@ -338,12 +338,12 @@ return [
             'header' => [
                 'mega-search' => [
                     'title' => 'Busca rápida',
-                    'tabs' => [
-                        'leads' => 'Oportunidades',
-                        'quotes' => 'Cotações',
-                        'persons' => 'Pessoas',
-                        'products' => 'Produtos',
-                        'settings' => 'Configurações',
+                    'tabs'  => [
+                        'leads'          => 'Oportunidades',
+                        'quotes'         => 'Cotações',
+                        'persons'        => 'Pessoas',
+                        'products'       => 'Produtos',
+                        'settings'       => 'Configurações',
                         'configurations' => 'Configurações',
                     ],
                     'explore-all-products'          => 'Explorar todos os Produtos',
