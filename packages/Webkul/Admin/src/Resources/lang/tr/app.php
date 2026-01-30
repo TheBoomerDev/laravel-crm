@@ -344,7 +344,7 @@ return [
                         'persons'        => 'Kişiler',
                         'products'       => 'Ürünler',
                         'settings'       => 'Ayarlar',
-                        'configurations' => 'Yaplandırmalar',
+                        'configurations' => 'Yaplandırma',
                     ],
                     'explore-all-products'          => 'Tüm Ürünleri Keşfet',
                     'explore-all-leads'             => 'Tüm Müşterileri Keşfet',
