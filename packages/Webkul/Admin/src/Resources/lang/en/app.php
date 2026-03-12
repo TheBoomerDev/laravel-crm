@@ -1980,6 +1980,15 @@ return [
                         'to' => 'To',
                     ],
                 ],
+                'stages' => [
+                    'won'            => 'Won',
+                    'lost'           => 'Lost',
+                    'need-more-info' => 'Need More Details',
+                    'closed-at'      => 'Closed At',
+                    'won-value'      => 'Won Value',
+                    'lost-reason'    => 'Lost Reason',
+                    'save-btn'       => 'Save',
+                ],
             ],
 
             'view-switcher' => [
