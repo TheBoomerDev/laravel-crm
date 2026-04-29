@@ -2133,6 +2133,13 @@ return [
         'users-info' => 'CRM’den kullanıcıları ekleyin, düzenleyin veya silin',
         'lead' => 'Lead',
         'lead-info' => 'CRM’de tüm lead ayarlarınızı yönetin',
+        'quick-add' => [
+            'title' => 'Hızlı Ekle',
+            'save' => 'Kaydet',
+            'to' => 'Kime',
+            'subject' => 'Konu',
+            'message' => 'Mesaj',
+        ],
         'pipelines' => 'Pipeline’lar',
         'pipelines-info' => 'CRM’den pipeline’ları ekleyin, düzenleyin veya silin',
         'sources' => 'Kaynaklar',
