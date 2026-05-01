@@ -19,6 +19,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -35,6 +38,9 @@ jobs:
         run: ${{ runner.temp }}/composer/vendor/bin/pint
 
       - name: Commit Linted Files
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: applied pint changes"
+          branch: ${{ github.head_ref || github.ref_name }}
+          create_branch: true
