@@ -1,0 +1,88 @@
+services:
+  # ------------------------------------------
+  # Krayin CRM Application (PHP-FPM)
+  # ------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: krayin-crm-app
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_URL=${APP_URL:-http://localhost}
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_DATABASE:-krayin_crm}
+      - DB_USERNAME=${DB_USERNAME:-krayin}
+      - DB_PASSWORD=${DB_PASSWORD:-changeme}
+      - CACHE_DRIVER=file
+      - QUEUE_CONNECTION=sync
+      - SESSION_DRIVER=database
+    volumes:
+      - ./storage:/app/storage
+    networks:
+      - krayin-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # ------------------------------------------
+  # Nginx Web Server
+  # ------------------------------------------
+  nginx:
+    image: nginx:alpine
+    container_name: krayin-crm-nginx
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "${NGINX_PORT:-8080}:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/http.d/default.conf:ro
+      - ./public:/usr/share/nginx/html:ro
+    networks:
+      - krayin-network
+
+  # ------------------------------------------
+  # MySQL Database
+  # ------------------------------------------
+  db:
+    image: mysql:8.0
+    container_name: krayin-crm-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-changeme}
+      - MYSQL_DATABASE=${DB_DATABASE:-krayin_crm}
+      - MYSQL_USER=${DB_USERNAME:-krayin}
+      - MYSQL_PASSWORD=${DB_PASSWORD:-changeme}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - krayin-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD:-changeme}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ------------------------------------------
+  # Redis (opcional, para caché/cacheo)
+  # ------------------------------------------
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: krayin-crm-redis
+  #   restart: unless-stopped
+  #   networks:
+  #     - krayin-network
+
+networks:
+  krayin-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
